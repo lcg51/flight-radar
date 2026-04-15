@@ -56,9 +56,6 @@ export function MapView({ onViewportChange }: Props) {
   const handleViewStateChange = useCallback(
     ({ viewState: vs }: { viewState: typeof INITIAL_VIEW_STATE }) => {
       setViewState(vs);
-
-      console.log("handle View State");
-
       try {
         const vp = new WebMercatorViewport(vs);
         const [minLng, minLat] = vp.unproject([

@@ -27,7 +27,6 @@ export default function App() {
 
     // When the worker sends processed flights, push them into the store
     worker.onmessage = (e: MessageEvent<WorkerOutMessage>) => {
-      console.log("update flights store", e.data);
       if (e.data.type === "READY") {
         updateFlights(e.data.flights);
       }
